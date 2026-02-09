@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Thandolwethu Yolanda Sonkqayi</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #ffebee 0%, #ffeef7 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+        }
+        
+        h1 {
+            color: #e63946;
+            margin-bottom: 15px;
+            font-size: 2.5rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+        
+        .special-name {
+            color: #d90429;
+            font-weight: bold;
+        }
+        
+        .subtitle {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 1.2rem;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 15px;
+            padding: 40px 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        
+        .message {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #333;
+            margin-bottom: 30px;
+            text-align: left;
+        }
+        
+        .message p {
+            margin-bottom: 15px;
+            padding: 10px;
+        }
+        
+        .memory {
+            background: #fff5f5;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #e63946;
+            margin: 20px 0;
+            font-style: italic;
+        }
+        
+        .question {
+            font-size: 2rem;
+            color: #e63946;
+            margin: 30px 0;
+            font-weight: bold;
+            padding: 20px;
+            background: #fff5f5;
+            border-radius: 10px;
+            border-left: 5px solid #e63946;
+            border-right: 5px solid #e63946;
+        }
+        
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 40px 0;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 18px 45px;
+            font-size: 1.4rem;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            min-width: 150px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .yes {
+            background: linear-gradient(to right, #e63946, #ff6b6b);
+            color: white;
+        }
+        
+        .yes:hover {
+            background: linear-gradient(to right, #d90429, #e63946);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(230, 57, 70, 0.3);
+        }
+        
+        .no {
+            background: linear-gradient(to right, #f0f0f0, #e0e0e0);
+            color: #666;
+            position: relative;
+        }
+        
+        .no:hover {
+            background: linear-gradient(to right, #e0e0e0, #d0d0d0);
+        }
+        
+        .result {
+            margin-top: 20px;
+            padding: 25px;
+            border-radius: 10px;
+            display: none;
+            font-size: 1.2rem;
+            line-height: 1.8;
+        }
+        
+        .yes-result {
+            background: #d4edda;
+            color: #155724;
+            border: 2px solid #c3e6cb;
+        }
+        
+        .no-result {
+            background: #f8d7da;
+            color: #721c24;
+            border: 2px solid #f5c6cb;
+        }
+        
+        .result h3 {
+            margin-bottom: 15px;
+            font-size: 1.8rem;
+        }
+        
+        .heart {
+            color: #e63946;
+            font-size: 2rem;
+            margin: 10px;
+            display: inline-block;
+            animation: pulse 1.5s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+        
+        footer {
+            margin-top: 20px;
+            color: #666;
+            font-size: 1rem;
+            padding: 10px;
+        }
+        
+        footer span {
+            color: #e63946;
+        }
+        
+        /* Floating hearts for celebration */
+        .floating-heart {
+            position: fixed;
+            font-size: 24px;
+            z-index: 1000;
+            pointer-events: none;
+            opacity: 0;
+        }
+        
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .subtitle {
+                font-size: 1rem;
+            }
+            
+            .question {
+                font-size: 1.5rem;
+                padding: 15px;
+            }
+            
+            .btn {
+                padding: 15px 35px;
+                font-size: 1.2rem;
+                min-width: 130px;
+            }
+            
+            .buttons {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+            
+            .card {
+                padding: 30px 20px;
+            }
+            
+            .result {
+                padding: 20px;
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>For <span class="special-name">Thandolwethu Yolanda Sonkqayi</span></h1>
+        <p class="subtitle">A Valentine's Day question from someone who remembers you fondly</p>
+        
+        <div class="card">
+            <div class="message">
+                <p>Dear <span class="special-name">Thandolwethu</span>,</p>
+                
+                <p>I hope this message finds you well. It's been a long time since we last saw each other in high school.</p>
+                
+                <div class="memory">
+                    Even though it's been years since we were in school together, I still remember you fondly. Those high school days feel like a lifetime ago, but the memory of you has stayed with me. I've often thought about you and wondered how you're doing.
+                </div>
+                
+                <p>Life has taken us on different paths, but I wanted to reach out with a special question for Valentine's Day.</p>
+                
+                <p>The distance of years hasn't diminished what I feel,</p>
+            </div>
+            
+            <div class="question">
+                Thandolwethu, will you be my Valentine?
+                <div class="heart">❤️</div>
+            </div>
+            
+            <div class="buttons">
+                <button class="btn yes" id="yesBtn">YES, I WILL</button>
+                <button class="btn no" id="noBtn">NO, THANKS</button>
+            </div>
+            
+           <div class="result yes-result" id="yesResult">
+    <h3>🎉 YOU SAID YES! 🎉</h3>
+    <p>Thandolwethu, you've made me so incredibly happy! Even though we haven't seen each other since high school, this means a lot me.</p>
+  
+    <p>I pray and hope that one day, we'll get to celebrate Valentine's Day together in person.</p>
+</div>
+
+<div class="result no-result" id="noResult">
+    <h3>💔 Thank You For Your Honesty</h3>
+    <p>I understand, Thandolwethu. After all these years, I accept your decision. Thank you for being honest with me.</p>
+    <p>I hope you have a wonderful Valentine's Day. I'll always remember you fondly from our high school days, and I pray that one day we might get to celebrate together.</p>
+</div>
+        <footer>
+            Made with <span>❤️</span> especially for Thandolwethu Yolanda Sonkqayi
+        </footer>
+    </div>
+
+    <script>
+        // Get all elements
+        const yesBtn = document.getElementById('yesBtn');
+        const noBtn = document.getElementById('noBtn');
+        const yesResult = document.getElementById('yesResult');
+        const noResult = document.getElementById('noResult');
+        
+        // Track NO button attempts
+        let noAttempts = 0;
+        const noMessages = [
+            "Are you sure, Thandolwethu?",
+            "Maybe think about it?",
+            "Give me a chance!",
+            "Pretty please?",
+            "You're breaking my heart!",
+            "Try again!",
+            "I'm not giving up!",
+            "One more try?"
+        ];
+        
+        // YES button click
+        yesBtn.addEventListener('click', function() {
+            // Hide both results first
+            yesResult.style.display = 'none';
+            noResult.style.display = 'none';
+            
+            // Show YES result
+            yesResult.style.display = 'block';
+            
+            // Disable buttons
+            yesBtn.disabled = true;
+            noBtn.disabled = true;
+            
+            // Change button text
+            yesBtn.textContent = "YES! ❤️";
+            yesBtn.style.background = "linear-gradient(to right, #2ecc71, #27ae60)";
+            
+            // Add celebration effect
+            document.body.style.background = "linear-gradient(135deg, #ffebee 0%, #d4edda 100%)";
+            
+            // Create floating hearts
+            createFloatingHearts();
+            
+            // Play celebration sound
+            playCelebrationSound();
+        });
+        
+        // NO button mouseover - makes it run away
+        noBtn.addEventListener('mouseover', function() {
+            // Calculate random position within window
+            const maxX = window.innerWidth - this.offsetWidth - 20;
+            const maxY = window.innerHeight - this.offsetHeight - 20;
+            const x = Math.floor(Math.random() * maxX);
+            const y = Math.floor(Math.random() * maxY);
+            
+            // Move button to random position
+            this.style.position = 'fixed';
+            this.style.left = `${x}px`;
+            this.style.top = `${y}px`;
+            this.style.zIndex = '1000';
+            
+            // Change button text after first few attempts
+            if (noAttempts < noMessages.length) {
+                this.textContent = noMessages[noAttempts];
+            }
+            
+            noAttempts++;
+            
+            // If clicked too many times, show message
+            if (noAttempts >= 5) {
+                alert("You're really determined to say no, Thandolwethu! 😅 Please give me a chance!");
+            }
+        });
+        
+        // NO button click (if somehow clicked)
+        noBtn.addEventListener('click', function() {
+            // Hide both results first
+            yesResult.style.display = 'none';
+            noResult.style.display = 'none';
+            
+            // Show NO result
+            noResult.style.display = 'block';
+            
+            // Reset button position
+            this.style.position = '';
+            this.style.left = '';
+            this.style.top = '';
+            
+            // Disable buttons
+            yesBtn.disabled = true;
+            noBtn.disabled = true;
+            
+            // Change NO button text
+            this.textContent = "NO (Answered)";
+            this.style.background = "linear-gradient(to right, #95a5a6, #7f8c8d)";
+            
+            // Reset attempts
+            noAttempts = 0;
+        });
+        
+        // Create floating hearts for celebration
+        function createFloatingHearts() {
+            const heartTypes = ['❤️', '💖', '💕', '💗', '💓', '💘', '💝'];
+            
+            for (let i = 0; i < 25; i++) {
+                setTimeout(() => {
+                    const heart = document.createElement('div');
+                    heart.className = 'floating-heart';
+                    heart.innerHTML = heartTypes[Math.floor(Math.random() * heartTypes.length)];
+                    heart.style.fontSize = Math.random() * 30 + 20 + 'px';
+                    heart.style.left = Math.random() * 100 + 'vw';
+                    heart.style.top = '100vh';
+                    heart.style.color = getRandomHeartColor();
+                    
+                    document.body.appendChild(heart);
+                    
+                    // Animate heart floating up
+                    const duration = Math.random() * 3 + 2;
+                    const animation = heart.animate([
+                        { 
+                            transform: 'translateY(0) rotate(0deg)', 
+                            opacity: 0.8 
+                        },
+                        { 
+                            transform: `translateY(-100vh) rotate(${Math.random() * 360}deg)`, 
+                            opacity: 0 
+                        }
+                    ], {
+                        duration: duration * 1000,
+                        easing: 'cubic-bezier(0.215, 0.610, 0.355, 1)'
+                    });
+                    
+                    // Remove heart after animation
+                    animation.onfinish = () => {
+                        heart.remove();
+                    };
+                }, i * 150);
+            }
+        }
+        
+        // Get random heart color
+        function getRandomHeartColor() {
+            const colors = ['#e63946', '#ff6b6b', '#ff8fab', '#ffb3c6', '#9d4edd'];
+            return colors[Math.floor(Math.random() * colors.length)];
+        }
+        
+        // Play celebration sound
+        function playCelebrationSound() {
+            try {
+                // Create a simple celebration sound
+                const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                const oscillator = audioContext.createOscillator();
+                const gainNode = audioContext.createGain();
+                
+                oscillator.connect(gainNode);
+                gainNode.connect(audioContext.destination);
+                
+                // Play a happy melody
+                const now = audioContext.currentTime;
+                
+                oscillator.frequency.setValueAtTime(523.25, now); // C5
+                oscillator.frequency.setValueAtTime(659.25, now + 0.1); // E5
+                oscillator.frequency.setValueAtTime(783.99, now + 0.2); // G5
+                
+                gainNode.gain.setValueAtTime(0.3, now);
+                gainNode.gain.exponentialRampToValueAtTime(0.01, now + 0.5);
+                
+                oscillator.start(now);
+                oscillator.stop(now + 0.5);
+            } catch (e) {
+                // Sound not supported, continue silently
+                console.log("Audio not supported");
+            }
+        }
+        
+        // Make sure the page is visible and centered on load
+        window.addEventListener('load', function() {
+            document.body.style.opacity = '1';
+            document.body.style.transition = 'opacity 0.5s ease';
+        });
+    </script>
+</body>
+</html>
